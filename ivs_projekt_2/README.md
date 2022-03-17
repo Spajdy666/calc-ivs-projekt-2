@@ -1,4 +1,4 @@
-Prostredi
+Python
 ---------
 
 Ubuntu 64bit
@@ -7,11 +7,11 @@ Windows 64bit
 Autori
 ------
 
-Nazev tymu
-- xlogin01 jmeno prijmeni 
-- xlogin02 jmeno prijmeni 
-- xlogin03 jmeno prijmeni 
-- xlogin04 jmeno prijmeni 
+RealRavers.txt
+- xspace38 Filip Špaček 
+- xrusna08 Juraj Rusnák 
+- xcajan02 Petr Čajánek
+- xstabe00 Michal Štábel
 
 Licence
 -------
