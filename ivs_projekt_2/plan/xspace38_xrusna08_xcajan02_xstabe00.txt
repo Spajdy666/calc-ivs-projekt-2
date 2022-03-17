@@ -1,0 +1,14 @@
+Rozdělení práce
+	- Grafické rozhraní (xrusna08)
+	- Testy (xspace38)
+	- Funkční program (xcajan08)
+	- Dokumentace (xstabe00)
+
+Termíny
+	- orientačně do 9.4. všechny práce (flexibilita)
+
+Komunikační kanály
+	- Discord
+
+Systém pro správu verzí
+	- github (link: https://github.com/Spajdy666/calc-ivs-projekt-2)
