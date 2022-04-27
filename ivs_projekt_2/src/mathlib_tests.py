@@ -140,7 +140,11 @@ class Factorial_lib_test(unittest.TestCase):
         self.math = MathLibrary
 
     #testing positive factorials
-
+    def test_Factorial_positive(self):
+        res = self.math.fact(5)
+        self.assertEqual(res, 120)
+        res = self.math.fact(8)
+        self.assertEqual(res, 40320)
 
 if __name__ == '__main__':
     unittest.main()
