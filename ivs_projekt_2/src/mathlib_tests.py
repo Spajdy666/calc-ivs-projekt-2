@@ -166,6 +166,60 @@ class Factorial_lib_test(unittest.TestCase):
         self.assertEqual(self.math.fact(1), 1)
         self.assertEqual(self.math.fact(8), 40320)
 
+#POWER TESTS
+class Power_lib_test(unittest.TestCase):
+    def setUp(self):
+        self.math = MathLibrary
+
+    #exponent should be positive
+    def test_Power_negative_exponent(self):
+        with self.assertRaises(ValueError):
+            self.math.power(3, -1)
+        with self.assertRaises(ValueError):
+            self.math.power(8, -5)
+
+    #exponent is zero, the result is 1 by definition
+    def test_Power_zero(self):
+        self.assertEqual(self.math.power(67, 0), 1)
+        self.assertEqual(self.math.power(43, 0), 1)
+
+    #power for positive numbers
+    def test_Power_positive(self):
+        self.assertEqual(self.math.power(5, 1), 5)
+        self.assertEqual(self.math.power(7, 3), 343)
+        self.assertEqual(self.math.power(3, 10), 59049)
+
+    #power for negative numbers
+    def test_Power_negative(self):
+        self.assertEqual(self.math.power(-4, 2), 16)
+        self.assertEqual(self.math.power(-5, 3), -125)
+        self.assertEqual(self.math.power(-16, 4), 65536)
+        self.assertEqual(self.math.power(-4, 5), -1024)
+
+    #power for decimal numbers
+    def test_Power_dec(self):
+        self.assertEqual(self.math.power(2.2, 5), 51.53632)
+        self.assertEqual(self.math.power(1.1, 2), 1.21)
+        self.assertEqual(self.math.power(-1.1, 2), 1.21)
+        self.assertEqual(self.math.power(-1.1, 3), -1.331)
+
+#ROOT TESTS
+class Root_lib_test(unittest.TestCase):
+    def setUp(self):
+        self.math = MathLibrary
+
+    #root exponent isn't negative/decimal/zero
+    def test_Root_invalid_exponent(self):
+        with self.assertRaises(ValueError):
+            self.math.root(4, -3)
+        with self.assertRaises(ValueError):
+            self.math.root(3, -15)
+        with self.assertRaises(ValueError):
+            self.math.root(2, 0)
+        with self.assertRaises(ValueError):
+            self.math.root(3, 1.15)
+
+
 
 if __name__ == '__main__':
     unittest.main()
