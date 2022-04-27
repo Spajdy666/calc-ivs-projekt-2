@@ -22,7 +22,7 @@ class MathLibrary:
         else:
             return a*MathLibrary.fact(a-1)
 
-    def nthRoot(a,b):
+    def root(a,b):
         #add negative values exception
         return a**(1/b)
 
