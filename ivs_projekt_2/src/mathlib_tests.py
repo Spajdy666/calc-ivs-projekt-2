@@ -69,6 +69,12 @@ class Division_lib_test(unittest.TestCase):
     def setUp(self):
         self.math = MathLibrary
 
+    #testing division by zero -> u shouldn't divide by zero
+    #assertraises to throw an exception
+    def Division_test_zero(self):
+        with self.assertRaises(ValueError):
+            self.math.divide(343, 0)
+
     #testing division for positive numbers
     def Division_test_positive(self):
         self.assertEqual(self.math.divide(3, 3), 1)
