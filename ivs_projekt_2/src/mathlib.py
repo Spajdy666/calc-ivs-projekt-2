@@ -26,4 +26,7 @@ class MathLibrary:
         #add negative values exception
         return a**(1/b)
 
-#print(MathLibrary.fact(4))
+    def power(a,b):
+        return a**b
+
+#print(MathLibrary.power(16,2))
