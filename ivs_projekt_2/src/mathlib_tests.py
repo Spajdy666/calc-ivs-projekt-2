@@ -1,3 +1,8 @@
+# mathlib_tests.py
+# Author: Filip Spacek
+# Login: xspace38
+# Date; 27-04-2022
+
 import unittest
 
 from src.mathlib import MathLibrary
