@@ -63,3 +63,32 @@ class Substraction_lib_test(unittest.TestCase):
         self.assertEqual(self.math.subtract(-4.1, 0.7), -4.8)
         self.assertEqual(self.math.subtract(4.1, -0.7), 4.8)
         self.assertEqual(self.math.subtract(-4.1, -0.7), -3.4)
+
+#DIVISION TESTS
+class Division_lib_test(unittest.TestCase):
+    def setUp(self):
+        self.math = MathLibrary
+
+    #testing division for positive numbers
+    def Division_test_positive(self):
+        self.assertEqual(self.math.divide(3, 3), 1)
+        self.assertEqual(self.math.divide(8, 4), 2)
+        self.assertEqual(self.math.divide(4, 8), 0.5)
+        self.assertEqual(self.math.divide(1000, 10), 100)
+
+    #testing division for negative numbers
+    def Division_test_negative(self):
+        self.assertEqual(self.math.divide(-6, 2), -3)
+        self.assertEqual(self.math.divide(16, -4), -4)
+        self.assertEqual(self.math.divide(-1450, -50), 29)
+        self.assertEqual(self.math.divide(-3, 10), -0.3)
+        self.assertEqual(self.math.divide(3, -10), -0.3)
+
+    #testing division for decimal numbers
+    def Division_test_dec(self):
+        self.assertEqual(self.math.divide(0.85, 0.5), 1.7)
+        self.assertEqual(self.math.divide(0.06, 0.12), 0.5)
+        self.assertEqual(self.math.divide(4.8, 2.4), 2)
+        self.assertEqual(self.math.divide(-4.4, 0.4), -11)
+        self.assertEqual(self.math.divide(0.45, -0.5), 0.9)
+        self.assertEqual(self.math.divide(-3.3, -6.6), 0.5)
