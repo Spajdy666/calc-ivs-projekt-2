@@ -219,7 +219,47 @@ class Root_lib_test(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.math.root(3, 1.15)
 
+    #root for positive numbers
+    def test_Root_positive(self):
+        self.assertEqual(self.math.root(4, 2), 2)
+        self.assertEqual(self.math.root(27, 3), 3)
+        self.assertAlmostEqual(self.math.root(26, 4), 2.2581)
 
+    #root for decimal numbers
+    def test_Root_dec(self):
+        self.assertAlmostEqual(self.math.root(1.6, 1.25), 1.4564513624209)
+        self.assertAlmostEqual(self.math.root(3.6, 4.1), 1.3667325471843)
+        self.assertAlmostEqual(self.math.root(2.5, 5.75), 1.172754094857)
+
+#LN TESTS
+class Ln_lib_test(unittest.TestCase):
+    def setUp(self):
+        self.math = MathLibrary
+
+    #invalid numbers for ln -> zero and negative numbers
+    def test_Ln_invalid(self):
+        with self.assertRaises(ValueError):
+            self.math.ln(0)
+        with self.assertRaises(ValueError):
+            self.math.ln(-3)
+        with self.assertRaises(ValueError):
+            self.math.ln(-5)
+
+    #ln of number 1
+    def test_Ln_one(self):
+        self.assertEqual(self.math.ln(1), 0)
+
+    #ln of positive numbers
+    def test_Ln_positive(self):
+        self.assertAlmostEqual(self.math.ln(5), 1.6094379124341003)
+        self.assertAlmostEqual(self.math.ln(3), 1.0986122886681096)
+        self.assertAlmostEqual(self.math.ln(11), 2.3978952727983707)
+
+    #ln of decimal numbers
+    def test_Ln_dec(self):
+        self.assertAlmostEqual(self.math.ln(3.6), 1.2809338454620645)
+        self.assertAlmostEqual(self.math.ln(8.125), 2.094945728215801)
+        self.assertAlmostEqual(self.math.ln(12.445), 2.521318935819555)
 
 if __name__ == '__main__':
     unittest.main()
