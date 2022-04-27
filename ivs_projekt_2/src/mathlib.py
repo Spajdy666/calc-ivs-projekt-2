@@ -29,4 +29,4 @@ class MathLibrary:
     def power(a,b):
         return a**b
 
-#print(MathLibrary.power(4,2))
+#print(MathLibrary.power(4,3))
