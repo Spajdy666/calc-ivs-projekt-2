@@ -139,12 +139,33 @@ class Factorial_lib_test(unittest.TestCase):
     def setUp(self):
         self.math = MathLibrary
 
-    #testing positive factorials
+    #testing factorials that cannot be solved
     def test_Factorial_positive(self):
-        res = self.math.fact(5)
-        self.assertEqual(res, 120)
-        res = self.math.fact(8)
-        self.assertEqual(res, 40320)
+        #negative numbers
+        with self.assertRaises(ValueError):
+            self.math.fact(-1)
+        with self.assertRaises(ValueError):
+            self.math.fact(-3)
+        with self.assertRaises(ValueError):
+            self.math.fact(-8)
+        #decimal numbers
+        with self.assertRaises(ValueError):
+            self.math.fact(4.5)
+        with self.assertRaises(ValueError):
+            self.math.fact(0.33333)
+        with self.assertRaises(ValueError):
+            self.math.fact(-4.271)
+
+    #testing factorial for zero -> 0! == 1
+    def test_Factorial_zero(self):
+        self.assertEqual(self.math.fact(0), 1)
+
+    #testing valid factorials
+    def test_Factorial(self):
+        self.assertEqual(self.math.fact(5), 120)
+        self.assertEqual(self.math.fact(1), 1)
+        self.assertEqual(self.math.fact(8), 40320)
+
 
 if __name__ == '__main__':
     unittest.main()
