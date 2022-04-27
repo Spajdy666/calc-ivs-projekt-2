@@ -98,3 +98,37 @@ class Division_lib_test(unittest.TestCase):
         self.assertEqual(self.math.divide(-4.4, 0.4), -11)
         self.assertEqual(self.math.divide(0.45, -0.5), 0.9)
         self.assertEqual(self.math.divide(-3.3, -6.6), 0.5)
+
+#MULTIPLICATION TESTS
+class Multiplication_lib_test(unittest.TestCase):
+    def setUp(self):
+        self.math = MathLibrary
+
+    #testing multiplication by positive numbers and zero
+    def Multiplication_test_positive(self):
+        self.assertEqual(self.math.multiply(0, 0), 0)
+        self.assertEqual(self.math.multiply(4, 0), 0)
+        self.assertEqual(self.math.multiply(0, 80), 0)
+        self.assertEqual(self.math.multiply(6, 8), 48)
+        self.assertEqual(self.math.multiply(48, 2), 96)
+        self.assertEqual(self.math.multiply(48, 48), 2304)
+
+    #testing multiplication by negative numbers
+    def Multiplication_test_negative(self):
+        self.assertEqual(self.math.multiply(-46, 31), -1426)
+        self.assertEqual(self.math.multiply(24, -33), -792)
+        self.assertEqual(self.math.multiply(-32, -64), 2048)
+
+    #testing multiplication by decimal numbers
+    def Multiplication_test_dec(self):
+        self.assertEqual(self.math.multiply(4, 4.8), 19.2)
+        self.assertEqual(self.math.multiply(2.44, 6), 14.64)
+        self.assertEqual(self.math.multiply(4.3, 12.6), 54.18)
+        self.assertEqual(self.math.multiply(-8.4, 4.6), -38.64)
+        self.assertEqual(self.math.multiply(4.32, -8.45), -36.504)
+        self.assertEqual(self.math.multiply(-4.4, -19.33), 85.052)
+        self.assertEqual(self.math.multiply(0.123, 0.456), 0.056088)
+
+
+if __name__ == '__main__':
+    unittest.main()
