@@ -20,7 +20,7 @@ run: main.py
 #pack source files needed for assignment completion
 pack:
 	rm ../$(PACK_NAME).zip
-    cd ..; zip -9Tru $(PACK_NAME).zip *; cd -
+	cd ..; zip -9Tru $(PACK_NAME).zip *; cd -
 
 clean:
 
