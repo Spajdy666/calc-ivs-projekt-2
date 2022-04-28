@@ -1,4 +1,7 @@
+from logging import exception
+from turtle import goto
 from PyQt5 import QtWidgets, QtCore
+#from PyQt5.QtWidgets import QPushButton
 from calc_GUI import Ui_mainWindow 
 from mathlib import MathLibrary
 
@@ -15,14 +18,30 @@ class CalculatorWindow(QtWidgets.QMainWindow,Ui_mainWindow):
         
         self.buttonAdd.clicked.connect(self.add)
         
-    def add(self):        
-        a = float(self.lineEditInput1.text())
-        b = float(self.lineEditInput2.text())
+    def add(self):
+        a = self.lineEditInput1.text()
+        a=self.returnFloat(a)
+        b = self.lineEditInput2.text()
+        b=self.returnFloat(b)
+        if a=="VALUE ERROR" or b=="VALUE ERROR":
+            self.showErrorDialog("Input is not a number")
+            return
         self.lineEditResult.setText(str(MathLibrary.add(a,b)))
+        
+    def returnFloat(self,a):
+        number = a
+        try:
+            number = float(number)
+            return number
+        except ValueError:
+            return "VALUE ERROR"
+        
+    def showErrorDialog(self,input):
+        QtWidgets.QMessageBox.critical(self,"Error",input)    
+        
 
 if __name__ == '__main__':                        
     import sys 
-    print("LOEREE") 
     app = QtWidgets.QApplication(sys.argv)
     window = CalculatorWindow()
     window.show()
