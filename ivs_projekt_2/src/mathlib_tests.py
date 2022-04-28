@@ -1,7 +1,7 @@
 # mathlib_tests.py
 # Author: Filip Spacek
 # Login: xspace38
-# Date; 27-04-2022
+# Date: 27-04-2022
 
 # "python3 -m tests.mathlib_tests.py" in terminal to run the test
 
@@ -220,8 +220,6 @@ class Root_lib_test(unittest.TestCase):
             self.math.root(4, -3)
         with self.assertRaises(ValueError):
             self.math.root(2, 0)
-        with self.assertRaises(ValueError):
-            self.math.root(3, 1.15)
         with self.assertRaises(ValueError):
             self.math.root(-4, 2)
 
