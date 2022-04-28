@@ -3,7 +3,7 @@
 # Login: xspace38
 # Date; 27-04-2022
 
-# "python3 -m tests.mathlib_tests.py" in terminal to run the tests
+# "python3 -m tests.mathlib_tests.py" in terminal to run the test
 
 import unittest
 
