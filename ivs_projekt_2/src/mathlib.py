@@ -9,6 +9,8 @@ class MathLibrary:
 
     def divide(a,b):
         #add division of 0 exception
+        if b==0:
+            raise Exception("Can not divide with zero.")
         return a/b
 
     def multiply(a,b):

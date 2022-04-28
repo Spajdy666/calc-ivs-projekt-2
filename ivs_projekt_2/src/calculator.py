@@ -46,7 +46,7 @@ class CalculatorWindow(QtWidgets.QMainWindow,Ui_mainWindow):
         b = self.lineEditInput2.text()
         b=self.returnFloat(b)
         if a=="VALUE ERROR" or b=="VALUE ERROR":
-            self.showErrorDialog("Input is not a number")
+            self.showErrorDialog("Input is not a number.")
             return
         self.lineEditResult.setText(str(MathLibrary.multiply(a, b)))
         
@@ -56,9 +56,12 @@ class CalculatorWindow(QtWidgets.QMainWindow,Ui_mainWindow):
         b = self.lineEditInput2.text()
         b=self.returnFloat(b)
         if a=="VALUE ERROR" or b=="VALUE ERROR":
-            self.showErrorDialog("Input is not a number")
+            self.showErrorDialog("Input is not a number.")
             return
-        self.lineEditResult.setText(str(MathLibrary.divide(a, b)))
+        try:
+            self.lineEditResult.setText(str(MathLibrary.divide(a, b)))
+        except:
+            self.showErrorDialog("Division with 0 is illegal.")
         
     def returnFloat(self,a):
         number = a
