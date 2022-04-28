@@ -22,6 +22,7 @@ pack:
 	rm ../$(PACK_NAME).zip
 	cd ..; zip -9Tru $(PACK_NAME).zip *; cd -
 
+#remove all files that shouldn't be in the final assignment
 clean:
 
 #testing
