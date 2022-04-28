@@ -7,7 +7,7 @@
 
 import unittest
 
-from src.mathlib import MathLibrary
+from mathlib import MathLibrary
 
 #ADDITION TESTS
 class Addition_lib_test(unittest.TestCase):

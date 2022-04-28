@@ -1,5 +1,4 @@
 from logging import exception
-from turtle import goto
 from PyQt5 import QtWidgets, QtCore
 #from PyQt5.QtWidgets import QPushButton
 from calc_GUI import Ui_mainWindow 
@@ -17,6 +16,9 @@ class CalculatorWindow(QtWidgets.QMainWindow,Ui_mainWindow):
         self.show()
         
         self.buttonAdd.clicked.connect(self.add)
+        self.buttonSub.clicked.connect(self.sub)
+        self.buttonMul.clicked.connect(self.mul)
+        self.buttonDiv.clicked.connect(self.div)
         
     def add(self):
         a = self.lineEditInput1.text()
@@ -27,6 +29,36 @@ class CalculatorWindow(QtWidgets.QMainWindow,Ui_mainWindow):
             self.showErrorDialog("Input is not a number")
             return
         self.lineEditResult.setText(str(MathLibrary.add(a,b)))
+        
+    def sub(self):
+        a = self.lineEditInput1.text()
+        a=self.returnFloat(a)
+        b = self.lineEditInput2.text()
+        b=self.returnFloat(b)
+        if a=="VALUE ERROR" or b=="VALUE ERROR":
+            self.showErrorDialog("Input is not a number")
+            return
+        self.lineEditResult.setText(str(MathLibrary.subtract(a, b)))
+        
+    def mul(self):
+        a = self.lineEditInput1.text()
+        a=self.returnFloat(a)
+        b = self.lineEditInput2.text()
+        b=self.returnFloat(b)
+        if a=="VALUE ERROR" or b=="VALUE ERROR":
+            self.showErrorDialog("Input is not a number")
+            return
+        self.lineEditResult.setText(str(MathLibrary.multiply(a, b)))
+        
+    def div(self):
+        a = self.lineEditInput1.text()
+        a=self.returnFloat(a)
+        b = self.lineEditInput2.text()
+        b=self.returnFloat(b)
+        if a=="VALUE ERROR" or b=="VALUE ERROR":
+            self.showErrorDialog("Input is not a number")
+            return
+        self.lineEditResult.setText(str(MathLibrary.divide(a, b)))
         
     def returnFloat(self,a):
         number = a

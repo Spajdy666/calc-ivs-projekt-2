@@ -1,0 +1,3 @@
+Při volání skriptu nad různými počty čísel (10,100,1000) se provede očekávaný počet příkazů.
+U 10 čísel je celková doba trvání programu zanedbatelná. U 100 čísel už je vyšší doba trvání, ale také se z toho těžko něco vyčte.
+U 1000 čísel je již doba trvání ~5 tisícin sekundy a lze již více vidět, kde program tráví kolik času.
