@@ -28,7 +28,7 @@ test: mathlib_tests.py
 doc: Doxyfile
 	doxygen Doxyfile
 
-#install requiring packages
+#install requiring packages for installation and running
 reqs:
 	pip3 install PyQt5
 
