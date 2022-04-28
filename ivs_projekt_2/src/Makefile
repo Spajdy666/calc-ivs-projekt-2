@@ -25,7 +25,7 @@ test: mathlib_tests.py
 	python3 mathlib_tests.py
 
 #generating documentation
-doc:
+doc: Doxyfile
 	doxygen -g Doxyfile
 
 #install requiring packages
