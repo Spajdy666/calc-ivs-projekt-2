@@ -15,4 +15,4 @@ Tým RealRavers.txt
 Licence
 -------
 
-Tento program je poskytovan...
+Tento program je poskytovan pod GNU GPL 3.0
