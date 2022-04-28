@@ -3,6 +3,8 @@
 # Login: xspace38
 # Date; 27-04-2022
 
+# "python3 -m tests.mathlib_tests.py" in terminal to run the tests
+
 import unittest
 
 from src.mathlib import MathLibrary
