@@ -16,8 +16,8 @@ class CalculatorWindow(QtWidgets.QMainWindow,Ui_mainWindow):
         self.buttonAdd.clicked.connect(self.add)
         
     def add(self):        
-        a = int(self.lineEditInput1.text())
-        b = int(self.lineEditInput2.text())
+        a = float(self.lineEditInput1.text())
+        b = float(self.lineEditInput2.text())
         self.lineEditResult.setText(str(MathLibrary.add(a,b)))
 
 if __name__ == '__main__':                        
