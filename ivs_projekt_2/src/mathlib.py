@@ -31,8 +31,8 @@ class MathLibrary:
         return fact
             
     def root(a,b):
-        if b%1!=0:
-            raise ValueError("Exponent must be natural number")
+        #if b%1!=0:
+        #    raise ValueError("Exponent must be natural number")
         if b<=0:
             raise ValueError("Exponent must be greater than 0.")
         if a<0 and b%2==0:
