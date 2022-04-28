@@ -4,6 +4,8 @@
 
 .PHONY: all compile pack run clean test doc reqs
 
+PACK_NAME=xspace38_xrusna08_xcajan02_xstabe00
+
 #compile source files and run
 all: compile run
 
@@ -17,6 +19,8 @@ run: main.py
 
 #pack files needed for assignment completion
 pack:
+	rm ../$(PACK_NAME).zip
+    cd ..; zip -9Tru $(PACK_NAME).zip *; cd -
 
 clean:
 
