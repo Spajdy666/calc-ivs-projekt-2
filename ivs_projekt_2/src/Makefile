@@ -11,7 +11,7 @@ all: compile run
 compile:
 	pip3 freeze
 
-#run files
+#execute
 run: main.py
 	python3 main.py
 
