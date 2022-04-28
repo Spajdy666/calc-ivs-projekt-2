@@ -18,12 +18,14 @@ class MathLibrary:
 
     def fact(a):
         #fix negative values and decimal
-        if a%1!=0:
+        #a=int(a)
+        if not float(a).is_integer():
             raise ValueError("Factorial must be natural number")
         if a<0:
             raise ValueError("Factorial value must be greater than 0.")
         if a==0:
             return 1
+        a=int(a)
         fact=1
         for i in range(1,a+1):
             fact*=i
@@ -36,14 +38,15 @@ class MathLibrary:
         if b<=0:
             raise ValueError("Exponent must be greater than 0.")
         if a<0 and b%2==0:
-            raise ValueError("%dth root must have a positive value",b)
+            raise ValueError("Even root root must have a positive value")
         if a<0:
             a=abs(a)
         return a**(1/b)
 
     def power(a,b):
-        if b%1!=0:
+        if not float(b).is_integer():
             raise ValueError("Exponent must be natural number")
+        b=int(b)
         if b<0:
             raise ValueError("Exponent must be greater than 0.")
         return a**b
@@ -51,5 +54,4 @@ class MathLibrary:
     def ln(a):
         if a<0:
             raise ValueError("Number must be higher than 0")
-            return
         return math.log(a)

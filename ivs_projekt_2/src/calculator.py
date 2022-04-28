@@ -26,49 +26,55 @@ class CalculatorWindow(QtWidgets.QMainWindow,Ui_mainWindow):
         self.buttonLn.clicked.connect(self.ln)
         
         self.buttonEquals.clicked.connect(self.equals)
+        
+        self.buttonClear.clicked.connect(self.clearAll)
+        
+        self.buttonAns.clicked.connect(self.ans)
+        
+        self.buttonZero.clicked.connect(lambda: self.number(0))
+        self.buttonOne.clicked.connect(lambda: self.number(1))
+        self.buttonTwo.clicked.connect(lambda: self.number(2))
+        self.buttonThree.clicked.connect(lambda: self.number(3))
+        self.buttonFour.clicked.connect(lambda: self.number(4))
+        self.buttonFive.clicked.connect(lambda: self.number(5))
+        self.buttonSix.clicked.connect(lambda: self.number(6))
+        self.buttonSeven.clicked.connect(lambda: self.number(7))
+        self.buttonEight.clicked.connect(lambda: self.number(8))
+        self.buttonNine.clicked.connect(lambda: self.number(9))
+        
+    def number(self,num):
+        #print(num)
+        current=self.lineEditInput1.text()
+        next=current+str(num)
+        self.lineEditInput1.setText(str(next))
+        
+    def ans(self):
+        resultLine=self.lineEditResult.text()
+        sides=resultLine.split('=')
+        self.clearAll()
+        self.lineEditInput1.setText(str(sides[1]))
+        
+    def clearAll(self):
+        self.lineEditInput1.clear()
+        self.lineEditInput2.clear()
+        self.lineEditResult.clear()
+        self.lineEditSign.clear()
                 
     def add(self):
-        a = self.lineEditInput1.text()
-        a=self.returnFloat(a)
-        b = self.lineEditInput2.text()
-        b=self.returnFloat(b)
-        if a=="VALUE ERROR" or b=="VALUE ERROR":
-            self.showErrorDialog("Input is not a number")
-            return
-        self.lineEditResult.setText(str(MathLibrary.add(a,b)))
+        self.lineEditSign.setText('+')
+        return
         
     def sub(self):
-        a = self.lineEditInput1.text()
-        a=self.returnFloat(a)
-        b = self.lineEditInput2.text()
-        b=self.returnFloat(b)
-        if a=="VALUE ERROR" or b=="VALUE ERROR":
-            self.showErrorDialog("Input is not a number")
-            return
-        self.lineEditResult.setText(str(MathLibrary.subtract(a, b)))
+        self.lineEditSign.setText('-')
+        return
         
     def mul(self):
-        a = self.lineEditInput1.text()
-        a=self.returnFloat(a)
-        b = self.lineEditInput2.text()
-        b=self.returnFloat(b)
-        if a=="VALUE ERROR" or b=="VALUE ERROR":
-            self.showErrorDialog("Input is not a number.")
-            return
-        self.lineEditResult.setText(str(MathLibrary.multiply(a, b)))
+        self.lineEditSign.setText('*')
+        return
         
     def div(self):
-        a = self.lineEditInput1.text()
-        a=self.returnFloat(a)
-        b = self.lineEditInput2.text()
-        b=self.returnFloat(b)
-        if a=="VALUE ERROR" or b=="VALUE ERROR":
-            self.showErrorDialog("Input is not a number.")
-            return
-        try:
-            self.lineEditResult.setText(str(MathLibrary.divide(a, b)))
-        except:
-            self.showErrorDialog("Division with 0 is illegal.")
+        self.lineEditSign.setText('/')
+        return
             
     def pow(self):
         self.lineEditSign.setText('^')
@@ -94,9 +100,30 @@ class CalculatorWindow(QtWidgets.QMainWindow,Ui_mainWindow):
         b=self.returnFloat(b)
         try:
             if sign=='^':
-                self.lineEditResult.setText(str(MathLibrary.power(a, b)))
+                result=MathLibrary.power(a, b)
+                resultLine = "{0}{1}{2}={3}".format(a,sign,b,result)
             elif sign=='√':
-                self.lineEditResult.setText(str(MathLibrary.root(a, b)))
+                result=MathLibrary.root(a,b)
+                resultLine = "{0}{1}{2}={3}".format(b,sign,a,result)
+            elif sign=='!':
+                result=MathLibrary.fact(a)
+                resultLine = "{0}{1}={2}".format(a,sign,result)
+            elif sign=="ln":
+                result=MathLibrary.ln(a)
+                resultLine = "{0}({1})={2}".format(sign,a,result)
+            elif sign=='+':
+                result=MathLibrary.add(a, b)
+                resultLine = "{0}{1}{2}={3}".format(a,sign,b,result)
+            elif sign=='-':
+                result=MathLibrary.subtract(a, b)
+                resultLine = "{0}{1}{2}={3}".format(a,sign,b,result)
+            elif sign=='*':
+                result=MathLibrary.multiply(a, b)
+                resultLine = "{0}{1}{2}={3}".format(a,sign,b,result)
+            elif sign=='/':
+                result=MathLibrary.divide(a, b)
+                resultLine = "{0}{1}{2}={3}".format(a,sign,b,result)
+            self.lineEditResult.setText(str(resultLine))
         except ValueError as e:
             self.showErrorDialog(str(e))
     
