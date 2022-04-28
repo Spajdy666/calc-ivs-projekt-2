@@ -32,12 +32,12 @@ class Addition_lib_test(unittest.TestCase):
 
     #testing addition of decimal numbers
     def test_Addition_dec(self):
-        self.assertEqual(self.math.add(0, 0.55), 0.55)
-        self.assertEqual(self.math.add(0.44, 0), 0.44)
-        self.assertEqual(self.math.add(0.5, -0.25), 0.25)
-        self.assertEqual(self.math.add(-2.6, 3), 0.4)
-        self.assertEqual(self.math.add(-4.5, -6.7), -11.2)
-        self.assertEqual(self.math.add(0.333, 0.444), 0.777)
+        self.assertAlmostEqual(self.math.add(0, 0.55), 0.55)
+        self.assertAlmostEqual(self.math.add(0.44, 0), 0.44)
+        self.assertAlmostEqual(self.math.add(0.5, -0.25), 0.25)
+        self.assertAlmostEqual(self.math.add(-2.6, 3), 0.4)
+        self.assertAlmostEqual(self.math.add(-4.5, -6.7), -11.2)
+        self.assertAlmostEqual(self.math.add(0.333, 0.444), 0.777)
 
 #SUBSTRACTION TESTS
 class Substraction_lib_test(unittest.TestCase):
@@ -48,28 +48,28 @@ class Substraction_lib_test(unittest.TestCase):
     def test_Substraction_positive(self):
         self.assertEqual(self.math.subtract(0, 0), 0)
         self.assertEqual(self.math.subtract(0, 4), -4)
-        self.assertEqual(self.math.subtract(84, 0), -84)
+        self.assertEqual(self.math.subtract(84, 0), 84)
         self.assertEqual(self.math.subtract(9, 4), 5)
         self.assertEqual(self.math.subtract(4, 9), -5)
 
     #testing substraction of negative numbers
     def test_Substraction_negative(self):
         self.assertEqual(self.math.subtract(0, -4), 4)
-        self.assertEqual(self.math.subtract(-84, 0), 84)
+        self.assertEqual(self.math.subtract(-84, 0), -84)
         self.assertEqual(self.math.subtract(-9, 4), -13)
         self.assertEqual(self.math.subtract(4, -9), 13)
         self.assertEqual(self.math.subtract(-95, -11), -84)
 
     #testing substraction of decimal numbers
     def test_Substraction_dec(self):
-        self.assertEqual(self.math.subtract(0, 4.5), -4.5)
-        self.assertEqual(self.math.subtract(4.5, 0), 4.5)
-        self.assertEqual(self.math.subtract(4.1, 0.1), 4)
-        self.assertEqual(self.math.subtract(4.1, 0.6), 3.5)
-        self.assertEqual(self.math.subtract(0.334, 0.223), 0.111)
-        self.assertEqual(self.math.subtract(-4.1, 0.7), -4.8)
-        self.assertEqual(self.math.subtract(4.1, -0.7), 4.8)
-        self.assertEqual(self.math.subtract(-4.1, -0.7), -3.4)
+        self.assertAlmostEqual(self.math.subtract(0, 4.5), -4.5)
+        self.assertAlmostEqual(self.math.subtract(4.5, 0), 4.5)
+        self.assertAlmostEqual(self.math.subtract(4.1, 0.1), 4)
+        self.assertAlmostEqual(self.math.subtract(4.1, 0.6), 3.5)
+        self.assertAlmostEqual(self.math.subtract(0.334, 0.223), 0.111)
+        self.assertAlmostEqual(self.math.subtract(-4.1, 0.7), -4.8)
+        self.assertAlmostEqual(self.math.subtract(4.1, -0.7), 4.8)
+        self.assertAlmostEqual(self.math.subtract(-4.1, -0.7), -3.4)
 
 #DIVISION TESTS
 class Division_lib_test(unittest.TestCase):
@@ -103,7 +103,7 @@ class Division_lib_test(unittest.TestCase):
         self.assertEqual(self.math.divide(0.06, 0.12), 0.5)
         self.assertEqual(self.math.divide(4.8, 2.4), 2)
         self.assertEqual(self.math.divide(-4.4, 0.4), -11)
-        self.assertEqual(self.math.divide(0.45, -0.5), 0.9)
+        self.assertEqual(self.math.divide(0.45, -0.5), -0.9)
         self.assertEqual(self.math.divide(-3.3, -6.6), 0.5)
 
 #MULTIPLICATION TESTS
@@ -128,13 +128,13 @@ class Multiplication_lib_test(unittest.TestCase):
 
     #testing multiplication by decimal numbers
     def test_Multiplication_dec(self):
-        self.assertEqual(self.math.multiply(4, 4.8), 19.2)
-        self.assertEqual(self.math.multiply(2.44, 6), 14.64)
-        self.assertEqual(self.math.multiply(4.3, 12.6), 54.18)
-        self.assertEqual(self.math.multiply(-8.4, 4.6), -38.64)
-        self.assertEqual(self.math.multiply(4.32, -8.45), -36.504)
-        self.assertEqual(self.math.multiply(-4.4, -19.33), 85.052)
-        self.assertEqual(self.math.multiply(0.123, 0.456), 0.056088)
+        self.assertAlmostEqual(self.math.multiply(4, 4.8), 19.2)
+        self.assertAlmostEqual(self.math.multiply(2.44, 6), 14.64)
+        self.assertAlmostEqual(self.math.multiply(4.3, 12.6), 54.18)
+        self.assertAlmostEqual(self.math.multiply(-8.4, 4.6), -38.64)
+        self.assertAlmostEqual(self.math.multiply(4.32, -8.45), -36.504)
+        self.assertAlmostEqual(self.math.multiply(-4.4, -19.33), 85.052)
+        self.assertAlmostEqual(self.math.multiply(0.123, 0.456), 0.056088)
 
 #FACTORIAL TESTS
 class Factorial_lib_test(unittest.TestCase):
@@ -173,12 +173,16 @@ class Power_lib_test(unittest.TestCase):
     def setUp(self):
         self.math = MathLibrary
 
-    #exponent should be positive
+    #exponent should be positive and shouldn't be decimal number
     def test_Power_negative_exponent(self):
         with self.assertRaises(ValueError):
             self.math.power(3, -1)
         with self.assertRaises(ValueError):
             self.math.power(8, -5)
+        with self.assertRaises(ValueError):
+            self.math.power(4, 3.555)
+        with self.assertRaises(ValueError):
+            self.math.power(8, -5.6666)
 
     #exponent is zero, the result is 1 by definition
     def test_Power_zero(self):
@@ -200,32 +204,32 @@ class Power_lib_test(unittest.TestCase):
 
     #power for decimal numbers
     def test_Power_dec(self):
-        self.assertEqual(self.math.power(2.2, 5), 51.53632)
-        self.assertEqual(self.math.power(1.1, 2), 1.21)
-        self.assertEqual(self.math.power(-1.1, 2), 1.21)
-        self.assertEqual(self.math.power(-1.1, 3), -1.331)
+        self.assertAlmostEqual(self.math.power(2.2, 5), 51.53632)
+        self.assertAlmostEqual(self.math.power(1.1, 2), 1.21)
+        self.assertAlmostEqual(self.math.power(-1.1, 2), 1.21)
+        self.assertAlmostEqual(self.math.power(-1.1, 3), -1.331)
 
 #ROOT TESTS
 class Root_lib_test(unittest.TestCase):
     def setUp(self):
         self.math = MathLibrary
 
-    #root exponent isn't negative/decimal/zero
+    #root exponent isn't negative/decimal/zero/even and negative
     def test_Root_invalid_exponent(self):
         with self.assertRaises(ValueError):
             self.math.root(4, -3)
         with self.assertRaises(ValueError):
-            self.math.root(3, -15)
-        with self.assertRaises(ValueError):
             self.math.root(2, 0)
         with self.assertRaises(ValueError):
             self.math.root(3, 1.15)
+        with self.assertRaises(ValueError):
+            self.math.root(-4, 2)
 
     #root for positive numbers
     def test_Root_positive(self):
         self.assertEqual(self.math.root(4, 2), 2)
         self.assertEqual(self.math.root(27, 3), 3)
-        self.assertAlmostEqual(self.math.root(26, 4), 2.2581)
+        self.assertAlmostEqual(self.math.root(26, 4), 2.2581008643532257)
 
     #root for decimal numbers
     def test_Root_dec(self):
