@@ -173,7 +173,7 @@ class Power_lib_test(unittest.TestCase):
     def setUp(self):
         self.math = MathLibrary
 
-    #exponent should be positive and shouldn't be decimal
+    #exponent should be positive and shouldn't be decimal number
     def test_Power_negative_exponent(self):
         with self.assertRaises(ValueError):
             self.math.power(3, -1)
