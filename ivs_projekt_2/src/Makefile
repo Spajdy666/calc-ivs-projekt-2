@@ -17,7 +17,7 @@ compile:
 run: main.py
 	python3 main.py
 
-#pack files needed for assignment completion
+#pack source files needed for assignment completion
 pack:
 	rm ../$(PACK_NAME).zip
     cd ..; zip -9Tru $(PACK_NAME).zip *; cd -
