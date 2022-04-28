@@ -1,3 +1,5 @@
+import math
+    
 class MathLibrary:
     def add(a,b):
         return a+b
@@ -27,5 +29,8 @@ class MathLibrary:
 
     def power(a,b):
         return a**b
+    
+    def ln(a):
+        return math.log(a)
 
-#print(MathLibrary.power(4,3))
+#print(MathLibrary.ln(5))
