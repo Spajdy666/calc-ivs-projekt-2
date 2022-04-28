@@ -1,4 +1,4 @@
-#Makefile for second project from IVS
+# Makefile for second project from IVS
 # Authors: RealRavers.txt
 # Date: 28-04-2022
 
@@ -30,9 +30,9 @@ test: mathlib_tests.py
 
 #generating documentation
 doc: Doxyfile
-	doxygen -g Doxyfile
+	doxygen Doxyfile
 
-#install requiring packages
+#install requiring packages for installation and running
 reqs:
 	pip3 install PyQt5
 
