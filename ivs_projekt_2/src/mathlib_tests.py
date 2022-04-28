@@ -62,13 +62,13 @@ class Substraction_lib_test(unittest.TestCase):
 
     #testing substraction of decimal numbers
     def test_Substraction_dec(self):
-        self.assertEqual(self.math.subtract(0, 4.5), -4.5)
-        self.assertEqual(self.math.subtract(4.5, 0), 4.5)
+        self.assertAlmostEqual(self.math.subtract(0, 4.5), -4.5)
+        self.assertAlmostEqual(self.math.subtract(4.5, 0), 4.5)
         self.assertAlmostEqual(self.math.subtract(4.1, 0.1), 4)
         self.assertAlmostEqual(self.math.subtract(4.1, 0.6), 3.5)
         self.assertAlmostEqual(self.math.subtract(0.334, 0.223), 0.111)
-        self.assertEqual(self.math.subtract(-4.1, 0.7), -4.8)
-        self.assertEqual(self.math.subtract(4.1, -0.7), 4.8)
+        self.assertAlmostEqual(self.math.subtract(-4.1, 0.7), -4.8)
+        self.assertAlmostEqual(self.math.subtract(4.1, -0.7), 4.8)
         self.assertAlmostEqual(self.math.subtract(-4.1, -0.7), -3.4)
 
 #DIVISION TESTS
@@ -214,7 +214,7 @@ class Root_lib_test(unittest.TestCase):
     def setUp(self):
         self.math = MathLibrary
 
-    #root exponent isn't negative/decimal/zero
+    #root exponent isn't negative/decimal/zero/even and negative
     def test_Root_invalid_exponent(self):
         with self.assertRaises(ValueError):
             self.math.root(4, -3)
@@ -222,6 +222,8 @@ class Root_lib_test(unittest.TestCase):
             self.math.root(2, 0)
         with self.assertRaises(ValueError):
             self.math.root(3, 1.15)
+        with self.assertRaises(ValueError):
+            self.math.root(-4, 2)
 
     #root for positive numbers
     def test_Root_positive(self):
