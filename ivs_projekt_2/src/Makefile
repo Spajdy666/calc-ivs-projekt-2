@@ -35,7 +35,10 @@ doc: Doxyfile
 
 #install requiring packages for installation and running
 reqs:
-	pip3 install PyQt5
+	sudo pip3 install PyQt5
+	sudo apt install python3-pip
+	sudo pip3 install PyQt5
+	sudo apt-get install ibxcb-xinerama0
 
 
 
