@@ -23,7 +23,7 @@ pack:
 
 #remove all files that shouldn't be in the final assignment
 clean:
-	rm -r calc_1.0_amd64.* calc-1.0/debian calc-1.0/*.py rm ../$(PACK_NAME).zip
+	rm -r calc_1.0_amd64.* calc-1.0/debian calc-1.0/*.py rm ../../$(PACK_NAME).zip
 	
 #testing
 test: mathlib_tests.py
