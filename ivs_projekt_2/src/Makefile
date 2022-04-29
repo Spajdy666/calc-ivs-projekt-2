@@ -44,7 +44,7 @@ reqs:
 installer:
 	cp *.py calc-1.0
 	cd calc-1.0; dh_make -n -s -c gpl -f ../calc-1.0.tar.gz;cd -
-	cp calc-1.0/dbn/* calc-1.0/debian/
+	cp calc-1.0/dbn/install calc-1.0/debian/
 	cd calc-1.0; dpkg-buildpackage -rfakeroot -uc -b; cd -
 
 
