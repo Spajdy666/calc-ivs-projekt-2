@@ -13,5 +13,5 @@ Skutečnost RealRavers.txt
    Každý se ale na nšěčem podílel více, na něčem zase méně a podle toho je také sepsané naše hodnocení.
    Celkově jsme se ale zapojili všichni stejným dílem.
 
-4) Domluvené meetingy byly na každý pátek, moc jsme se podle toho ale neřídili, sešli jsme se jen párkrát.
+4) Domluvené schůzky byly na každý pátek, moc jsme se podle toho ale neřídili, sešli jsme se jen párkrát.
    Pro meetingy a domluvu jsme podle plánu využívali komunikační kanál Discord a na správu verzí github.
