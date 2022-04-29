@@ -1,1 +1,17 @@
-tento soubor bude obsahovat rozdil mezi planem projektu a skutecnosti
+Skutečnost RealRavers.txt
+
+1) Trochu jsme podcenili deadline, přišel rychleji než jsme očekávali.
+   Do toho jsme dělali projekty do ostatních předmětů, takže jsme projekt
+   udělali velmi těsně. Kdybychom začali dříve a více průběžně, určitě by se nám
+   podařilo celý projekt více odladit.
+
+2) Test driven development byl dodržen tak z půlky, banální funkce jako sčítání a
+   odčítání byly naimplementovány dříve, než samotné testy. Složitější funkce jsme
+   implementovali tak na půl zároveň s testy.
+
+3) Rozdělení práce už bylo ze začátku pojato více směrem, že všichni se budou podílet na všem.
+   Každý se ale na nšěčem podílel více, na něčem zase méně a podle toho je také sepsané naše hodnocení.
+   Celkově jsme se ale zapojili všichni stejným dílem.
+
+4) Domluvené schůzky byly na každý pátek, moc jsme se podle toho ale neřídili, sešli jsme se jen párkrát.
+   Pro meetingy a domluvu jsme podle plánu využívali komunikační kanál Discord a na správu verzí github.

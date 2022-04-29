@@ -1,4 +1,4 @@
-xlogin01 100 (základ GUI a základní mat. operace)
-xlogin02 100 (pokročilé mat. operace)
-xlogin03 90 (profiling, instalátor)
-xlogin04 110 (testy, dokumentace)
+xspace38 100 (testy, Makefile, Doxygen)
+xrusna08 100 (vzhledový návrh GUI, uživatelská příručka, dokumentace)
+xcajan02 100 (knihovna mat. operací, implementace GUI, profiling)
+xstabe00 100 (instalace, odinstalace, Makefile pomoc)
