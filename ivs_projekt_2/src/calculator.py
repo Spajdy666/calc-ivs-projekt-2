@@ -56,6 +56,24 @@ class CalculatorWindow(QtWidgets.QMainWindow,Ui_mainWindow):
         
         self.buttonHelp.clicked.connect(self.setHelp)
         
+        self.buttonDot.clicked.connect(self.printDot)
+        
+    def printDot(self):
+        global help
+        if help==1:
+            self.showInfoDialog("Klávesa přidá do daného textového pole desetinnou čárku, pokud již tam není")
+            return
+        if focused==1:
+            current=self.lineEditInput1.text()
+            if "." not in current:
+                next=current+str(".")
+                self.lineEditInput1.setText(str(next))
+        elif focused==2:
+            current=self.lineEditInput2.text()
+            if "." not in current:
+                next=current+str(".")
+                self.lineEditInput2.setText(str(next))
+        
     def setHelp(self):
         global help
         if help==1:
@@ -89,7 +107,6 @@ Pro ukončení nápovědy stiskněte znovu toto tlačítko"""
         #self.lineEditInput1.setFocus()
         
     def number(self,num):
-        #print(num)
         global help
         if help==1:
             self.showInfoDialog("Numerická klávesa sloužící k číselnému vstupu")
@@ -108,10 +125,11 @@ Pro ukončení nápovědy stiskněte znovu toto tlačítko"""
             self.showInfoDialog("Klávesa zkopíruje výsledek výrazu do pravého vstupu")
             return
         resultLine=self.lineEditResult.text()
-        sides=resultLine.split('=')
-        self.clearAll()
-        self.lineEditInput1.setText(str(sides[1]))
-        self.changeFocus1()
+        if resultLine!="":
+            sides=resultLine.split('=')
+            self.clearAll()
+            self.lineEditInput1.setText(str(sides[1]))
+            self.changeFocus1()
         
     def clearAll(self):
         if help==1:
@@ -158,7 +176,7 @@ Pro ukončení nápovědy stiskněte znovu toto tlačítko"""
     def pow(self):
         if help==1:
             self.showInfoDialog("Klávesa umocní číslo (vlevo) na daný exponent (vpravo)")
-        return
+            return
         self.lineEditSign.setText('^')
         self.changeFocus2()
         return
@@ -166,14 +184,14 @@ Pro ukončení nápovědy stiskněte znovu toto tlačítko"""
     def fact(self):
         if help==1:
             self.showInfoDialog("Klávesa vypočítá faktoriál daného čísla (vlevo)")
-        return
+            return
         self.lineEditSign.setText('!')
         return
         
     def root(self):
         if help==1:
             self.showInfoDialog("Klávesa vypočítá n-tou mocninu (vpravo) daného čísla (vlevo)")
-        return
+            return
         self.lineEditSign.setText('√')
         self.changeFocus2()
         return
@@ -181,7 +199,7 @@ Pro ukončení nápovědy stiskněte znovu toto tlačítko"""
     def ln(self):
         if help==1:
             self.showInfoDialog("Klávesa vypočítá přirozený logaritmus čísla (vlevo)")
-        return
+            return
         self.lineEditSign.setText("ln")
         return
     

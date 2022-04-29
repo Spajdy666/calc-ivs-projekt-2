@@ -103,6 +103,7 @@ class Ui_mainWindow(object):
         self.lineEditSign = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEditSign.setGeometry(QtCore.QRect(360, 140, 31, 31))
         self.lineEditSign.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEditSign.setReadOnly(True)
         self.lineEditSign.setObjectName("lineEditSign")
         self.buttonRoot = QtWidgets.QPushButton(self.centralwidget)
         self.buttonRoot.setGeometry(QtCore.QRect(400, 300, 51, 51))
