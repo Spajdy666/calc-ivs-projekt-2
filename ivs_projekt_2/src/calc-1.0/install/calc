@@ -1,0 +1,5 @@
+#!/bin/bash
+# -*- coding: utf-8 -*-
+
+CACL_HOME=`dirname "$0"`
+exec python3 "${CACL_HOME}/calculator.py"

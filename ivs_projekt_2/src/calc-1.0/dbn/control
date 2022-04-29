@@ -1,0 +1,11 @@
+Source: calc
+Section: unknown
+Priority: optional
+Maintainer: Filip Špaček <xspace38@stud.fit.vut.cz>, Petr Čajánek <xcajan02@stud.fit.vut.cz>, Juraj Rusnák <xrusna08@stud.fit.vut.cz>, Michal Štábel <xstabe00@stud.fit.vut.cz>
+Build-Depends: debhelper-compat (= 12)
+Standards-Version: 4.4.1
+
+Package: calc
+Architecture: Any
+Depends:${shlibs:Depends}, ${misc:Depends}
+Description: Calculator

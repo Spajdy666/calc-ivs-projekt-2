@@ -1,0 +1,8 @@
+[Desktop Entry]
+Categories=Qt;
+Exec=calc
+Name=Calculator
+Keywords=calculation;arithmetic;
+Icon=/usr/share/pixmaps/calc.xpm
+Type=Application
+X-KDE-StartupNotify=false
