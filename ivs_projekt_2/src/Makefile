@@ -24,7 +24,8 @@ pack:
 
 #remove all files that shouldn't be in the final assignment
 clean:
-
+	rm -r calc_1.0_amd64.* calc-1.0/debian calc-1.0/*.py
+	
 #testing
 test: mathlib_tests.py
 	python3 mathlib_tests.py
@@ -40,6 +41,11 @@ reqs:
 	sudo pip3 install PyQt5
 	sudo apt-get install ibxcb-xinerama0
 
+installer:
+	cp *.py calc-1.0
+	cd calc-1.0; dh_make -n -s -c gpl -f ../calc-1.0.tar.gz;cd -
+	cp calc-1.0/dbn/* calc-1.0/debian/
+	cd calc-1.0; dpkg-buildpackage -rfakeroot -uc -b; cd -
 
 
 
