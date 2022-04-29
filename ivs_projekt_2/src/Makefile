@@ -19,12 +19,11 @@ run: main.py
 
 #pack source files needed for assignment completion
 pack:
-	##rm ../$(PACK_NAME).zip
 	cd ../..; zip -9Tru $(PACK_NAME).zip $(PACK_NAME); cd -
 
 #remove all files that shouldn't be in the final assignment
 clean:
-	rm -r calc_1.0_amd64.* calc-1.0/debian calc-1.0/*.py
+	rm -r calc_1.0_amd64.* calc-1.0/debian calc-1.0/*.py rm ../$(PACK_NAME).zip
 	
 #testing
 test: mathlib_tests.py
