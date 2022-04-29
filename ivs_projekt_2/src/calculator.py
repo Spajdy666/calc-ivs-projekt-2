@@ -283,12 +283,4 @@ Pro ukončení nápovědy stiskněte znovu toto tlačítko"""
         QtWidgets.QMessageBox.critical(self,"Error",input)
         
     def showInfoDialog(self,input):
-        QtWidgets.QMessageBox.information(self,"Nápověda",input)        
-        
-
-if __name__ == '__main__':                        
-    import sys 
-    app = QtWidgets.QApplication(sys.argv)
-    window = CalculatorWindow()
-    window.show()
-    sys.exit(app.exec_())     
+        QtWidgets.QMessageBox.information(self,"Nápověda",input)  
