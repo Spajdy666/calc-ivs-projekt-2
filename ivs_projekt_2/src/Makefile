@@ -19,8 +19,8 @@ run: main.py
 
 #pack source files needed for assignment completion
 pack:
-	rm ../$(PACK_NAME).zip
-	cd ..; zip -9Tru $(PACK_NAME).zip *; cd -
+	##rm ../$(PACK_NAME).zip
+	cd ../..; zip -9Tru $(PACK_NAME).zip $(PACK_NAME); cd -
 
 #remove all files that shouldn't be in the final assignment
 clean:
